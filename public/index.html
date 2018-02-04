@@ -1,29 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="A boilerplate for Bootstrap 4 projects">
-	<meta name="author" content="@daveflynn">
-	<title>Bootstrap 4 SASS Yarn Boilerplate</title>
-	<link href="dist/css/main.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A boilerplate for Bootstrap 4 projects">
+    <meta name="author" content="@daveflynn">
+    <title>Bootstrap 4 SASS Yarn Boilerplate</title>
+    <link href="dist/css/main.css" rel="stylesheet">
+
+
 </head>
 <body>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<h1 class="header">Bootstrap 4</h1>
-				<i class="fa fa-rocket"></i>
-			</div>
-		</div>
-	</div>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
 
+          <!-- <a class="navbar-brand" href="#">Fixed navbar</a> -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link js-scroll-trigger" href="#home">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#link">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-	
-	<script src="dist/js/jquery.min.js"></script>
-	<script src="dist/js/bootstrap.min.js"></script>
-	<script src="dist/js/main.js"></script>
+    <!-- Begin page content -->
+    <main role="main">
+      <section id="home">
+        <div class="container">
+          <div class="pt-5 logo"><img src="dist/images/enjoy.png"/></div>
+          <div class="d-flex flex-row justify-content-around w-100 pos50">
+            <div class="card" style="width: 18rem;">                          
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#link" class="card-link js-scroll-trigger">Card link</a>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">                          
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#link" class="card-link js-scroll-trigger">Card link</a>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">                          
+              <div class="card-body">
+                <h5 class="card-title">Catering</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Catering</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#link" class="card-link js-scroll-trigger">Catering menyer</a>
+              </div>
+            </div>
+          </div>     
+          <p class="downbutton"><a class="fa fa-angle-double-down fa-4x js-scroll-trigger" href="#link"></a></p>
+        </div>
+      </section>
+
+      <section id="one">
+        <div class="container">
+          <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+          <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+          <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        </div>
+      </section>
+      <section id="one">
+        <div class="container">
+          <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+          <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+          <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        </div>
+      </section>
+      <section id="one">
+        <div class="container">
+          <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+          <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+          <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        </div>
+      </section>
+
+      <section id="link">
+        <div class="container">
+          <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+          <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+          <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        </div>
+      </section>
+      
+      <section id="one">
+        <div class="container">
+          <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+          <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+          <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        </div>
+      </section>
+      <section id="one">
+        <div class="container">
+          <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+          <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+          <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        </div>
+      </section>
+      <section id="one">
+        <div class="container">
+          <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+          <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+          <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
+
+    <script src="dist/js/jquery.min.js"></script>
+    <script src="dist/js/jquery.easing.1.3.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/main.js"></script>
 </body>
 </html>

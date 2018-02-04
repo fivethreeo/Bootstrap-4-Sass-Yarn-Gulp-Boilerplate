@@ -5,11 +5,16 @@ var gulp = require('gulp'),
 		autoprefixer = require('gulp-autoprefixer'),
 		concat = require('gulp-concat'),
 		uglify = require('gulp-uglify'),
-		imagemin = require('gulp-imagemin');
-		
+		imagemin = require('gulp-imagemin'),
+		livereload = require('gulp-livereload'),
+		connect = require('connect'),
+		serveIndex = require('serve-index'),
+		serveStatic = require('serve-static');		
+
 var config = {
 	stylesPath: 'assets/styles',
 	jsPath: 'assets/scripts',
+	imagesPath: 'assets/images',
 	outputDir: 'public/dist'
 }
 
@@ -20,6 +25,12 @@ gulp.task('icons', function() { 
 		.pipe(gulp.dest(config.outputDir + '/fonts')); 
 });
 
+
+gulp.task('fonts', function() { 
+	return gulp.src('assets/fonts/**.*') 
+		.pipe(gulp.dest(config.outputDir + '/fonts')); 
+});
+
 gulp.task('images', function() { 
 	return gulp.src(config.imagesPath + '/*')
 		.pipe(imagemin())
@@ -27,7 +38,7 @@ gulp.task('images', function() { 
 });
 
 gulp.task('css', function() {
-	return gulp.src(config.stylesPath + '/main.sass')
+	return gulp.src(config.stylesPath + '/main.scss')
 		.pipe(sass({
 				outputStyle: 'compressed',
 				includePaths: [
@@ -45,6 +56,13 @@ gulp.task('jquery', function(){
 	return gulp.src('./node_modules/jquery/dist/jquery.min.js') 
 		.pipe(gulp.dest(config.outputDir + '/js')); 
 });
+
+
+gulp.task('jquery-easing', function(){
+	return gulp.src('./node_modules/jquery-easing/jquery.easing.1.3.js') 
+		.pipe(gulp.dest(config.outputDir + '/js')); 
+});
+
 
 gulp.task('bootstrap-js', function(){
 	return gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js') 
@@ -65,4 +83,38 @@ gulp.task('watch', function(){
 	gulp.watch([config.imagesPath + '/**/*'], ['images']);
 });
 
-gulp.task('default', ['icons', 'css', 'jquery', 'bootstrap-js', 'js']);
+gulp.task('connect', function () {
+    
+    var serveApp = serveStatic('public');
+    var serveWhich= 'public';
+    
+    var app = connect()
+        .use(require('connect-livereload')({ port: 35729 }))
+        .use(serveStatic(serveWhich))
+        .use(serveApp)
+        .use(serveIndex(serveWhich));
+
+    require('http').createServer(app)
+        .listen(9000)
+        .on('listening', function() {
+            console.log('Started connect web server on http://localhost:9000.');
+        });
+});
+
+gulp.task('serve', ['connect', 'watch'], function () {
+
+    livereload.listen();
+
+    require('opn')('http://localhost:9000');
+    
+    var delay_livereload = function(timeout) {
+      return function(vinyl) {
+        setTimeout(function() { livereload.changed(vinyl) }, timeout)
+      };
+    }
+
+    gulp.watch(['public/**/*']).on('change', delay_livereload(500));
+    
+});
+
+gulp.task('default', ['icons', 'fonts', 'images', 'css', 'jquery', 'jquery-easing', 'bootstrap-js', 'js']);

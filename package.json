@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-4-sass-yarn-gulp-boilerplate",
-  "version": "0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "@daveflynn",
   "devDependencies": {
@@ -14,10 +14,17 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
-    "bootstrap": "4.0.0-beta",
+    "bootstrap": "^4.0.0",
+    "connect": "^3.6.5",
+    "connect-livereload": "^0.6.0",
     "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
     "jquery": "^3.2.1",
+    "opn": "^5.2.0",
     "popper.js": "^1.12.2",
+    "serve-index": "^1.9.1",
+    "serve-static": "^1.13.1",
     "tooltip.js": "^1.1.5"
   }
 }
