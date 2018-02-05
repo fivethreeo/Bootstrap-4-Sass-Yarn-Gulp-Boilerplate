@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-livereload": "^3.8.1",
     "jquery": "^3.2.1",
+    "jquery-easing": "0.0.1",
     "opn": "^5.2.0",
     "popper.js": "^1.12.2",
     "serve-index": "^1.9.1",
