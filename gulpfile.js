@@ -9,29 +9,31 @@ var gulp = require('gulp'),
 		livereload = require('gulp-livereload'),
 		connect = require('connect'),
 		serveIndex = require('serve-index'),
-		serveStatic = require('serve-static');		
-
+		serveStatic = require('serve-static'),
+		pug = require('gulp-pug');
+ 
 var config = {
 	stylesPath: 'assets/styles',
 	jsPath: 'assets/scripts',
 	imagesPath: 'assets/images',
+	templatesPath: 'assets/templates',
 	outputDir: 'public/dist'
 }
 
 
 
-gulp.task('icons', function() { 
-	return gulp.src('./node_modules/font-awesome/fonts/**.*') 
-		.pipe(gulp.dest(config.outputDir + '/fonts')); 
+gulp.task('icons', function() {
+	return gulp.src('./node_modules/font-awesome/fonts/**.*')
+		.pipe(gulp.dest(config.outputDir + '/fonts'));
 });
 
 
-gulp.task('fonts', function() { 
-	return gulp.src('assets/fonts/**.*') 
-		.pipe(gulp.dest(config.outputDir + '/fonts')); 
+gulp.task('fonts', function() {
+	return gulp.src('assets/fonts/**.*')
+		.pipe(gulp.dest(config.outputDir + '/fonts'));
 });
 
-gulp.task('images', function() { 
+gulp.task('images', function() {
 	return gulp.src(config.imagesPath + '/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest(config.outputDir + '/images'))
@@ -53,20 +55,31 @@ gulp.task('css', function() {
 
 
 gulp.task('jquery', function(){
-	return gulp.src('./node_modules/jquery/dist/jquery.min.js') 
-		.pipe(gulp.dest(config.outputDir + '/js')); 
+	return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+		.pipe(gulp.dest(config.outputDir + '/js'));
 });
 
 
 gulp.task('jquery-easing', function(){
-	return gulp.src('./node_modules/jquery-easing/jquery.easing.1.3.js') 
-		.pipe(gulp.dest(config.outputDir + '/js')); 
+	return gulp.src('./node_modules/jquery-easing/jquery.easing.1.3.js')
+		.pipe(gulp.dest(config.outputDir + '/js'));
 });
 
 
 gulp.task('bootstrap-js', function(){
-	return gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js') 
-		.pipe(gulp.dest(config.outputDir + '/js')); 
+	return gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js')
+		.pipe(gulp.dest(config.outputDir + '/js'));
+});
+
+
+gulp.task('scrollreveal-js', function(){
+	return gulp.src('./node_modules/scrollreveal/dist/scrollreveal.min.js')
+		.pipe(gulp.dest(config.outputDir + '/js'));
+});
+
+gulp.task('jquery-parallax', function(){
+	return gulp.src('./node_modules/jquery-parallax.js/parallax.min.js')
+		.pipe(gulp.dest(config.outputDir + '/js'));
 });
 
 gulp.task('js', function() {
@@ -77,10 +90,25 @@ gulp.task('js', function() {
 		.pipe(gulp.dest(config.outputDir + '/js'));
 });
 
+function handleError(err) {
+  this.emit('end');
+};
+
+gulp.task('templates', function() {
+  var YOUR_LOCALS = {};
+ 
+  gulp.src(config.templatesPath + '/*.pug')
+    .pipe(pug({
+      locals: YOUR_LOCALS
+    }).on('error', handleError))
+    .pipe(gulp.dest('public'))
+});
+
 gulp.task('watch', function(){
 	gulp.watch([config.stylesPath + '**/*.scss', config.stylesPath + '**/*.sass', config.stylesPath + '**/*.css'], ['css']);
 	gulp.watch([config.jsPath + '**/*.js'], ['js']);
 	gulp.watch([config.imagesPath + '/**/*'], ['images']);
+	gulp.watch([config.templatesPath + '/*.pug'], ['templates']);
 });
 
 gulp.task('connect', function () {
@@ -117,4 +145,4 @@ gulp.task('serve', ['connect', 'watch'], function () {
     
 });
 
-gulp.task('default', ['icons', 'fonts', 'images', 'css', 'jquery', 'jquery-easing', 'bootstrap-js', 'js']);
+gulp.task('default', ['templates', 'icons', 'fonts', 'images', 'css', 'jquery', 'jquery-easing', 'bootstrap-js', 'scrollreveal-js', 'jquery-parallax', 'js']);

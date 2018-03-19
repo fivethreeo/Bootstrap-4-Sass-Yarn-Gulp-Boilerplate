@@ -20,10 +20,13 @@
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-livereload": "^3.8.1",
+    "gulp-pug": "^3.3.0",
     "jquery": "^3.2.1",
     "jquery-easing": "0.0.1",
+    "jquery-parallax.js": "^1.5.0",
     "opn": "^5.2.0",
     "popper.js": "^1.12.2",
+    "scrollreveal": "^3.3.6",
     "serve-index": "^1.9.1",
     "serve-static": "^1.13.1",
     "tooltip.js": "^1.1.5"

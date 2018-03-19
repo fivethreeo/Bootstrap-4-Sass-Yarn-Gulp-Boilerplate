@@ -1,0 +1,243 @@
+-
+  var menuEntries = [
+    {
+      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
+      allergens: "Peanøtter",
+      price: 200
+    },
+    {
+      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
+      price: 200
+    },
+    {
+      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
+      allergens: "Peanøtter",
+      price: 200
+    },
+    {
+      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
+      allergens: "Peanøtter",
+      price: 200
+    },
+    {
+      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
+      price: 200
+    },
+    {
+      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
+      allergens: "Peanøtter",
+      price: 200
+    },
+  ];
+
+mixin menuentry(entry)
+  h6.card-subtitle.mb-2.menuentry
+    div.real
+      if !entry.allergens
+        span.name= entry.name
+      else
+        span.nameb= entry.name
+        span.allergens= "Allergener: " + entry.allergens
+      span.price= "kr " + entry.price + ",-"
+      span.dots
+    div.stretch(aria-hidden="true")
+      if !entry.allergens
+        span.name= entry.name
+      else
+        span.nameb= entry.name
+        span.allergens= "Allergener: " + entry.allergens
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='A boilerplate for Bootstrap 4 projects')
+    meta(name='author', content='@daveflynn')
+    title Bootstrap 4 SASS Yarn Boilerplate
+    link(href='dist/css/main.css', rel='stylesheet')
+    script(src='dist/js/scrollreveal.min.js')
+    script.
+      document.documentElement.classList.add('js');
+      window.sr = ScrollReveal();
+      // Add class to <html> if ScrollReveal is supported
+      // Note: this method is deprecated, and only works in version 3
+      if (sr.isSupported()) {
+      document.documentElement.classList.add('sr');
+      }
+  body
+    header
+      // Fixed navbar
+      nav.navbar-light.navbar.navbar-expand-md.fixed-top
+        .container
+          // <a class="navbar-brand" href="#">Fixed navbar</a>
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarCollapse.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+              li.nav-item.active
+                a.nav-link.js-scroll-trigger(href='#home')
+                  | Home 
+                  span.sr-only (current)
+              li.nav-item
+                a.nav-link.js-scroll-trigger(href='#link') Link
+    // Begin page content
+    main(role='main')
+      section#home
+        .container
+          .logo
+            img(src='dist/images/enjoy.png')
+          .d-flex.flex-row.justify-content-around.w-100.pos50
+            .card(style='width: 18rem;')
+              .card-body
+                h5.card-title Card title
+                h6.card-subtitle.mb-2.text-muted Card subtitle
+                p.card-text
+                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                a.card-link.js-scroll-trigger(href='#link') Card link
+            .card(style='width: 18rem;')
+              .card-body
+                h5.card-title Card title
+                h6.card-subtitle.mb-2.text-muted Card subtitle
+                p.card-text
+                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                a.card-link.js-scroll-trigger(href='#link') Card link
+            .card(style='width: 18rem;')
+              .card-body
+                h5.card-title Catering
+                h6.card-subtitle.mb-2.text-muted Catering
+                p.card-text
+                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                a.card-link.js-scroll-trigger(href='#cateringmenyer') Cateringmenyer
+          p.downbutton
+            a.fa.fa-angle-double-down.fa-4x.js-scroll-trigger(href='#cateringmenyer')
+      section#cateringmenyer
+        .container.reveal
+          h1.mt-5l Cateringmenyer
+          p.lead EnJoy har 4 standardmenyer for catering..
+          .d-flex.flex-row.justify-content-between
+            .card.w-22
+              .card-body
+                h6.card-subtitle.mb-2 Meny nr. 1 - 3 retter
+                ul
+                  li Vårruller (2 stk. pr. pers)
+                  li Rød curry (kylling)
+                  li Chilipaste (kylling)
+                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
+            .card.w-22
+              .card-body
+                h6.card-subtitle.mb-2 Meny nr. 2 - 4 retter
+                ul
+                  li Vårruller (2 stk. pr. pers)
+                  li Gul curry (kylling)
+                  li Sursøt saus (svin)
+                  li Chilipaste (kylling)
+                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
+            .card.w-22
+              .card-body
+                h6.card-subtitle.mb-2 Meny nr. 3 - 5 retter
+                ul
+                  li Vårruller (2 stk. pr. pers)
+                  li Gul curry (kylling)
+                  li Thai wok (kylling/svin)
+                  li Sursøt saus (svin)
+                  li Chilipaste (kylling)
+                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
+            .card.w-22
+              .card-body
+                h6.card-subtitle.mb-2 Meny nr. 4 - Supermeny
+                ul
+                  li Vårruller (2 stk. pr. pers)
+                  li Innbakt kylling
+                  li Kyllingspidd
+                  li Biffsnadder thai style (biffkjøtt)
+                  li Rød curry (kylling)
+                  li Sursøt saus (svin)
+                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
+          p
+            | Minimum 15 personer ved levering av mat. Alle rettene leveres barme med ris salat og saus.
+        .parallax-window(data-parallax='scroll', data-image-src='dist/images/statue.jpg', data-position-y='top')
+      section#meny
+        .container.reveal
+          h1.mt-5l Meny
+          .d-flex.flex-row.justify-content-between
+            .card.w-50
+              .card-body
+                for entry in menuEntries
+                  +menuentry(entry)
+        .parallax-window(data-parallax='scroll', data-image-src='dist/images/boats.jpg')
+      section#one
+        .container.reveal
+          h1.mt-5 Sticky footer with fixed navbar
+          p.lead
+            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
+            code padding-top: 60px;
+            |  on the 
+            code body > .container
+            | .
+          p
+            | Back to 
+            a(href='../sticky-footer') the default sticky footer
+            |  minus the navbar.
+      section#link
+        .container.reveal
+          h1.mt-5 Sticky footer with fixed navbar
+          p.lead
+            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
+            code padding-top: 60px;
+            |  on the 
+            code body > .container
+            | .
+          p
+            | Back to 
+            a(href='../sticky-footer') the default sticky footer
+            |  minus the navbar.
+        .parallax-window(data-parallax='scroll', data-image-src='dist/images/boats.jpg')
+      section#one
+        .container.reveal
+          h1.mt-5 Sticky footer with fixed navbar
+          p.lead
+            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
+            code padding-top: 60px;
+            |  on the 
+            code body > .container
+            | .
+          p
+            | Back to 
+            a(href='../sticky-footer') the default sticky footer
+            |  minus the navbar.
+      section#one
+        .container.reveal
+          h1.mt-5 Sticky footer with fixed navbar
+          p.lead
+            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
+            code padding-top: 60px;
+            |  on the 
+            code body > .container
+            | .
+          p
+            | Back to 
+            a(href='../sticky-footer') the default sticky footer
+            |  minus the navbar.
+      section#one
+        .container.reveal
+          h1.mt-5 Sticky footer with fixed navbar
+          p.lead
+            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
+            code padding-top: 60px;
+            |  on the 
+            code body > .container
+            | .
+          p
+            | Back to 
+            a(href='../sticky-footer') the default sticky footer
+            |  minus the navbar.
+    footer.footer
+      .container
+        span.text-muted Place sticky footer content here.
+    script(src='dist/js/jquery.min.js')
+    script(src='dist/js/jquery.easing.1.3.js')
+    script(src='dist/js/parallax.min.js')
+    script(src='dist/js/bootstrap.min.js')
+    script(src='dist/js/main.js')

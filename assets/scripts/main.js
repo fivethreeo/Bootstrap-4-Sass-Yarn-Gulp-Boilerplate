@@ -18,7 +18,7 @@ $(function () {
       
       // use this if no effect is required
       // $navbar.hide();
-    } else { // scroll up
+    } else if (st==0) { // scroll up
       
       // use this is jQuery full is used
       $navbar.removeClass('fade-in')
@@ -33,6 +33,7 @@ $(function () {
     lastScrollTop = st;
   });
 });
+
 (function($) {
   "use strict"; // Start of use strict
 
@@ -43,7 +44,7 @@ $(function () {
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
         $('html, body').animate({
-          scrollTop: (target.offset().top - 54)
+          scrollTop: (target.offset().top - 56)
         }, 1000, "easeInOutExpo");
         return false;
       }
@@ -62,3 +63,9 @@ $(function () {
   });
 
 })(jQuery); // End of use strict
+
+var els = document.querySelectorAll('.reveal > *'), i;
+
+for (i = 0; i < els.length; ++i) {
+  sr.reveal(els[i], { reset: true, duration: 2000}, 50);;
+}
