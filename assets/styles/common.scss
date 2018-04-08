@@ -52,9 +52,10 @@ code {
   transition: background 1s linear;
 }
 .logo {
-  width: 400px;
+  width: auto;
   margin: 0 auto;
-  margin-top: 20px;
+  position: relative;
+  top: 70px;
 }
 
 @include media-breakpoint-between(md, xl) {
@@ -133,6 +134,11 @@ h1 {
     text-shadow: 0 1px 0 rgb(204,204,204) , 0 2px 0 rgb(201,201,201) , 0 3px 0 rgb(187,187,187) , 0 4px 0 rgb(185,185,185) , 0 5px 0 rgb(170,170,170) , 0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(0,0,0,0.298039) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902);
 }
 
+h2 {
+    text-align: center;
+}
+
+
 
 .parallax-window {
     min-height: 400px;
@@ -141,7 +147,9 @@ h1 {
 
 
 /* Ensure elements load hidden before ScrollReveal runs */
-.sr .reveal > * { visibility: hidden; }
+.sr .reveal {
+  p, h1, h2, h3, h4, h5, h6, ul { visibility: hidden; }
+}
 
 .reveal { padding-top: 20px; }
 
@@ -179,6 +187,24 @@ text-shadow:
 
 }
 
+#cateringmenyer .card {
+  width: 96% !important;
+  margin: 1em 0;
+}
+
+@include media-breakpoint-between(sm, md) {
+  #cateringmenyer .card {
+    width: 48% !important;
+  }
+}
+
+@include media-breakpoint-between(lg, xl) {
+  #cateringmenyer .card {
+    width: 24% !important;
+  }
+}
+
+/*
 #cateringmenyer .price {
  top: 0rem;
   right: -1rem;
@@ -204,6 +230,7 @@ text-shadow:
     background: #999;
     z-index: -1;
   }
+*/
 
 /*
 <h6 class="card-subtitle mb-2 menuentry">
@@ -229,32 +256,155 @@ text-shadow:
 }
 
 */
+$bg: #fff;
+
+@mixin me_wide {
+  span.price {
+    display: inline-block;
+    text-align: right;
+    background: $bg;
+    float: right;
+    line-height: 2em;
+    padding-bottom: 0.4em;
+    padding-left: 0.2em;
+  }
+  span.description {
+    padding-right: 0.2em;
+  }
+  &.withdesc span.price {
+    line-height: 1.5em;
+  }
+  span.dots:after {
+    font-size: 0.6em;
+    background: #0ff;
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    line-height: 3.8em;
+    content: attr(data) " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+  }
+  &.withdesc span.dots:after {
+      line-height: 3em;
+  }
+}
+@mixin me_compact {
+  span.prices {
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+  }
+  span.price {
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    padding-right: 0.5em;
+    padding-left: 0.1em;
+  }
+  span.dots:after {
+    font-size: 0.6em;
+    position: absolute;
+    bottom: 0em;
+    right: 0em;
+    white-space: nowrap;
+    line-height: 2em;
+    content: attr(data) " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+  }  
+  &.multiprices {
+    padding-bottom: 3.5em;
+    span.dots:after {
+    line-height: 2.9em;
+
+    }
+  }
+  &.singleprice {
+    padding-bottom: 1.5em;
+  }
+}
+@mixin me_wrap {
+  position: relative;
+  overflow-x: hidden;
+  display: block;
+  
+  span.name {
+    font-size: 1.2em;
+    background: $bg;
+    font-weight: bold;
+  }
+  span.description {
+    font-size: 1em;
+    background: $bg;
+  }
+  span.allergens {
+    font-size: 0.8em;
+  }
+  span.price {
+    font-weight: bold;
+    background: $bg;
+  }
+  span.prices {
+    display: inline-block;
+    float: right;
+    margin-top: -1em;
+    background: $bg;
+    padding-right: 0.5em;
+
+    span.priceblock {
+      display: inline-block;
+      text-align: right;
+      padding-left: 0.5em;
+      &:first-child {
+        padding-left: 0em;
+      }
+    }
+    span.pricelabel {
+      display: block;
+      font-weight: bold;
+    }
+    span.pricevalue {
+      display: block;
+      padding-left: 0.2em;
+      padding-bottom: 0.2em;
+      font-weight: bold;
+    }
+  }
+  &.withdesc span.prices {
+      margin-top: -1.5em;
+  }
+}
 
 .menuentry {
-  position: relative;
-  overflow: hidden; 
-  margin-top: 1em;
+  padding: 0 0.5em 0 1em;
+  .extra {
+
+    display: block;
+  }
+  &.responsive {
+    @include media-breakpoint-down(xs) {
+      border-bottom: solid 1px #ddd;
+    }
+    span.wrap {
+            
+      @include me_wrap;
+
+      @include media-breakpoint-down(xs) {
+        @include me_compact;
+      }
+      @include media-breakpoint-up(sm) {
+        @include me_wide;
+      }
+    }
+  }
+  &.nonresponsive {
+    
+    span.wrap {
+            
+      @include me_wrap;
+      @include me_wide;
+
+    }
+  }
 }
-.menuentry div.real {
-  position: absolute;
-  padding-right: 3.5em;
-  
-}
-.menuentry div.real span.dots:after {
-font-size: 0.5em;
-  content: attr(data) ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
-}
-.menuentry div.real span.price { 
-  position: absolute;
-  right: 0; 
-}
-.menuentry div.stretch  { 
-visibility: hidden;
-  padding-right: 3.5em;
-}
-.menuentry span.nameb  { 
-  display: block;
-}
-.menuentry span.allergens  { 
-font-size: 0.8em;
+
+#meny h4 {
+  padding: 0 0.5em 0 0.5em;
 }

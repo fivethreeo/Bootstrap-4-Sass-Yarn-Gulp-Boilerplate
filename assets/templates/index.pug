@@ -1,51 +1,287 @@
 -
   var menuEntries = [
+  {name: "", classes: "responsive", entries: [
     {
-      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
-      allergens: "Peanøtter",
-      price: 200
+      name: "1. Enjoy mix",
+      description: "2 vårruller, 1 kyllingspidd, 1 samosa, 1 innbakt kylling m/ris, salat, plommesaus, peanøttsaus og chilisaus",
+      allergens: "hvetemel, egg, soya, fisk, skalldyr og peanøtter",
+      price: 169
+    },
+
+    {
+      name: "2. Vår/ vegetar vårrull meny",
+      description: "4stk hjemmelagede vårruller m/ris, salat og chilisaus",
+      allergens: "hvetemel, egg, soya, fisk og skalldyr",
+      price: 135
     },
     {
-      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
-      price: 200
+      name: "3. Gai Satay",
+      description: "4stk kyllingspidd m/ris, salat og peanøttsaus",
+      allergens: "sennep, soya, hvetemel og nøtter",
+      price: 135
     },
     {
-      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
-      allergens: "Peanøtter",
-      price: 200
+      name: "4. Samosa",
+      description: "4stk hjemmelaget samosa m/ris, salat og chilisaus",
+      allergens: "hvetemel, soya og egg",
+      price: 135
     },
     {
-      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
-      allergens: "Peanøtter",
-      price: 200
+      name: "5. Gung chup pang tåd 4stk",
+      allergens: "skalldyr, hvetemel, soya og fisk",
+      price: 135
     },
     {
-      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
-      price: 200
+      name: "6. Gai Tod",
+      description: "2stk innbakt kylling m/ris, salat og chilisaus",
+      allergens: "hvetemel, soya, fisk, skalldyr og egg",
+      price: 135
     },
+
     {
-      name: "Meny nr. 1 - 3 rette r5555555 555 5555",
-      allergens: "Peanøtter",
-      price: 200
+      name: "7. Grønn karri",
+      description: "kokosmelk, sukker, krydder og paprika ",
+      allergens: " melk, fisk, skalldyr og soya",
+      prices: [["kylling", 135], ["svin", 135], ["storfe", 155]]
     },
+
+    {
+      name: "8. Rød karri",
+      description: "kokosmelk, sukker, krydder og paprika",
+      allergens: "melk, fisk, skalldyr og soya",
+      prices: [["kylling", 135], ["svin", 135], ["storfe", 155]]
+    },
+
+    {
+      name: "9. Gul karri",
+      description: "kokosmelk, sukker, krydder og gul løk",
+      allergens: "melk, fisk, skalldyr og soya",
+      prices: [["kylling", 135], ["svin", 135]]
+    },
+
+    {
+      name: "10. Sursøt saus",
+      description: "ananas, paprika, løk og gulrot",
+      allergens: " melk, fisk, skalldyr og soya",
+      prices: [["kylling", 135], ["svin", 135]]
+    },
+
+    {
+      name: "11. Kylling med chilipaste og cashewnøtter",
+      allergens: "hvetemel, soya, fisk og skalldyr",
+      price: 145
+    },
+
+    {
+      name: "12. Wok",
+      description: "paprika, løk, gulrot, sukkererter og krydder",
+      allergens: "soya, fisk, skalldyr, egg",
+      prices: [["kylling", 135], ["svin", 135], ["storfe", 155]]
+    },
+
+    {
+      name: "13. Stekt ris",
+      description: "gulrot, løk, sukkererter, ris, egg, sukker",
+      allergens: "soya, fisk, skalldyr, egg",
+      prices: [["kylling", 135], ["svin", 135]]
+    },
+
+    {
+      name: "14. \"Mamma's\"",
+      description: "ris, gulrot, bacon, salami, kokt skinke, grønnsaker, krydder",
+      allergens: "soya, fisk, skalldyr",
+      price: 135
+    },
+
+    {
+      name: "15. Stekte nudler",
+      description: "løk, grønnsaker, krydder, nøtter, østerssaus, og sukker",
+      allergens: "soya, fisk, skalldyr, nøtter og egg",
+      prices: [["kylling", 149], ["svin", 149]]
+    },
+
+    {
+      name: "16. Keng som pla",
+      description: "stekt laks i sur karri med kokosmelk og krydder",
+      allergens: "soya, fisk, skalldyr",
+      price: 165
+    },
+
+    {
+      name: "17. Pla pat prik tai",
+      description: "frityrstekt torsk i peppersaus, østerssaus, krydder og løk",
+      allergens: "soya, fisk, skalldyr",
+      price: 165
+    },
+
+    {
+      name: "18. Pla rad prik",
+      description: "frityrstekt torsk i sweet chilisaus, østerssaus, krydder og løk",
+      allergens: "soya, fisk, skalldyr",
+      price: 165
+    },
+
+    {
+      name: "19. Keng som nue",
+      description: "stekt biff i sur karri og kokosmelk, krydder og nøtter",
+      allergens: "soya, fisk, skalldyr, peanøtter",
+      price: 155
+    },
+
+    {
+      name: "20. Bamboo biff",
+      description: "stekt biff med bambusskudd og krydder",
+      allergens: "soya, fisk, skalldyr",
+      price: 155
+    },
+
+    {
+      name: "21. Tom Kha Kai (suppe)",
+      allergens: "fisk",
+      price: 135
+    }]},
+
+    {name: "Familiemeny", classes: "responsive", entries: [
+    {
+      name: "Familiemeny",
+      extra: "<span>A: Rød karri + vårruller (5 stk)<br />B: Gul karri + vårruller (5 stk)<br />C: Grønn karri + vårruller (5 stk)<br />(passer til 4-5 personer)</span>",
+      price: 599
+    },
+
+    {
+      name: "1pk. frosne vårruller (15 stk)",
+      price: "225,- pr. pk.",
+      pricepadclass: "pricespk",
+      pricelengthclass: "long",
+      priceposclass: "pricepk"
+    },
+
+    {
+      name: "1pk. frosne samosa (12 stk)",
+      price: "225,- pr. pk.",
+      pricepadclass: "pricespk",
+      pricelengthclass: "long",
+      priceposclass: "pricepk"
+    },
+
+    {
+      name: "1pk. hjemmelaget vårrullsaus",
+      price: "55,- pr. pk.",
+      pricepadclass: "pricespk",
+      pricelengthclass: "long",
+      priceposclass: "pricepk"
+    }]},
+
+    {name: "Barnemeny", classes: "responsive", entries: [
+
+    {
+      name: "Fiskepinnetallerken",
+      description: "fiskepinner, pommes frites, salat og sweet chilisaus",
+      price: "55,-/ 95,-",
+      pricepadclass: "pricespk",
+      pricelengthclass: "long",
+      priceposclass: "pricepk"
+    },
+
+    {
+      name: "Pølse m/ pommes frites (2 pølser)",
+      description: "fiskepinner, pommes frites, salat og sweet chilisaus",
+      price: 55
+    },
+
+    {
+      name: "Kyllingnuggets m/ pommes frites",
+      description: "fiskepinner, pommes frites, salat og sweet chilisaus",
+      price: "55,-/ 85,-",
+    }]},
+
+    {name: "Ekstra", classes: "nonresponsive compact mb-0", entries: [
+
+
+
+    {
+      name: "Vårrull",
+      price: 20
+    },
+
+    {
+      name: "Kyllingspyd",
+      price: 25
+    },
+
+    {
+      name: "Innbakt kylling",
+      price: 20
+    },
+
+    {
+      name: "Innbakt scampi",
+      price: 20
+    },
+
+    {
+      name: "Pølse",
+      price: 20
+    },
+
+    {
+      name: "Pommes frites",
+      price: 20
+    },
+
+    {
+      name: "Ris",
+      price: 15
+    },
+
+    {
+      name: "Kylling (100g)",
+      price: 30
+    },
+
+    {
+      name: "Svin (100g)",
+      price: 30
+    },
+
+    {
+      name: "Biffkjøtt (100g)",
+      price: 50
+    }]}
+
   ];
 
-mixin menuentry(entry)
-  h6.card-subtitle.mb-2.menuentry
-    div.real
-      if !entry.allergens
-        span.name= entry.name
-      else
-        span.nameb= entry.name
-        span.allergens= "Allergener: " + entry.allergens
-      span.price= "kr " + entry.price + ",-"
+mixin menuentryprice(entry)
+    if entry.prices
+      span.prices
+        span.priceblock
+          span.pricelabel= entry.prices[0][0]
+          span.pricevalue= "kr " + entry.prices[0][1] + ",-"
+        span.priceblock
+          span.pricelabel= entry.prices[1][0]
+          span.pricevalue= "kr " + entry.prices[1][1] + ",-"
+        if entry.prices[2]
+          span.priceblock
+            span.pricelabel= entry.prices[2][0]
+            span.pricevalue= "kr " + entry.prices[2][1] + ",-"
+    else
+      - 
+        var pricestr = typeof(entry.price) == "string" ? entry.price : "kr " + entry.price + ",-"
+      span.price= pricestr
+
+mixin menuentry(entrygroup, entry)
+  p.position-relative.menuentry(class=entrygroup.classes)
+    span.wrap(class=(entry.prices ? "multiprices" : "singleprice") + (entry.description ? " withdesc" : ""))
+      span.name(class=entry.description ? "d-block" : "")!= entry.name
+      if entry.description
+        span.description= entry.description
       span.dots
-    div.stretch(aria-hidden="true")
-      if !entry.allergens
-        span.name= entry.name
-      else
-        span.nameb= entry.name
-        span.allergens= "Allergener: " + entry.allergens
+      +menuentryprice(entry)
+      if entry.extra
+        span.extra!= entry.extra
+      
+      if entry.allergens
+        span.allergens.d-block= "Allergener: " + entry.allergens
 
 doctype html
 html(lang='en')
@@ -53,9 +289,9 @@ html(lang='en')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='description', content='A boilerplate for Bootstrap 4 projects')
-    meta(name='author', content='@daveflynn')
-    title Bootstrap 4 SASS Yarn Boilerplate
+    meta(name='description', content='EnJoy - Thai Cooking')
+    meta(name='author', content='Øyvind Saltvik')
+    title EnJoy - Thai Cooking
     link(href='dist/css/main.css', rel='stylesheet')
     script(src='dist/js/scrollreveal.min.js')
     script.
@@ -81,158 +317,99 @@ html(lang='en')
                   | Home 
                   span.sr-only (current)
               li.nav-item
-                a.nav-link.js-scroll-trigger(href='#link') Link
+                a.nav-link.js-scroll-trigger(href='#meny') Meny
+              li.nav-item
+                a.nav-link.js-scroll-trigger(href='#cateringmenyer') Catering
     // Begin page content
     main(role='main')
       section#home
         .container
           .logo
             img(src='dist/images/enjoy.png')
-          .d-flex.flex-row.justify-content-around.w-100.pos50
+          .d-none.d-lg-flex.flex-row.justify-content-around.w-100.pos50
             .card(style='width: 18rem;')
               .card-body
-                h5.card-title Card title
-                h6.card-subtitle.mb-2.text-muted Card subtitle
+                h5.card-title Take Away
+                h6.card-subtitle.mb-2.text-muted Take Away
                 p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
-                a.card-link.js-scroll-trigger(href='#link') Card link
+                  | Velkommen til vårt gatekjøkken!
+                a.card-link.js-scroll-trigger(href='#meny') Take Away Meny
             .card(style='width: 18rem;')
               .card-body
-                h5.card-title Card title
-                h6.card-subtitle.mb-2.text-muted Card subtitle
-                p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
-                a.card-link.js-scroll-trigger(href='#link') Card link
+                h5.card-title Åpningstider
+                h6.card-subtitle.mb-2.text-muted Åpningstider
+                h2.card-text
+                  | Man-Lør 14-20
             .card(style='width: 18rem;')
               .card-body
                 h5.card-title Catering
                 h6.card-subtitle.mb-2.text-muted Catering
                 p.card-text
-                  | Some quick example text to build on the card title and make up the bulk of the card's content.
+                  | EnJoy har 4 standardmenyer for catering.
                 a.card-link.js-scroll-trigger(href='#cateringmenyer') Cateringmenyer
           p.downbutton
-            a.fa.fa-angle-double-down.fa-4x.js-scroll-trigger(href='#cateringmenyer')
+            a.fa.fa-angle-double-down.fa-4x.js-scroll-trigger(href='#meny')
+      section#meny
+        .container.reveal
+          h1.mt-5l Take Away Meny
+          h2 Åpningstider: Man-Lør 14-20
+          h2 Tel: 919 02 876
+          .d-flex.flex-row.justify-content-between
+            .card.w-100
+              for entrygroup in menuEntries
+                if entrygroup.name
+                  h4.card-subtitle.mb-2=entrygroup.name
+                for entry in entrygroup.entries
+                  +menuentry(entrygroup, entry)
+          p Nummer for bestilling: 919 02 876
+          p Gatekjøkkenet befinner seg på Bunnpris Levanger, Nesset.
+        .parallax-window(data-parallax='scroll', data-image-src='dist/images/statue.jpg')
       section#cateringmenyer
         .container.reveal
           h1.mt-5l Cateringmenyer
           p.lead EnJoy har 4 standardmenyer for catering..
-          .d-flex.flex-row.justify-content-between
-            .card.w-22
+          .d-flex.flex-row.justify-content-between.flex-wrap
+            .card
               .card-body
-                h6.card-subtitle.mb-2 Meny nr. 1 - 3 retter
+                h6.card-subtitle.mb-2 Meny nr. 1, 3 retter
                 ul
                   li Vårruller (2 stk. pr. pers)
-                  li Rød curry (kylling)
-                  li Chilipaste (kylling)
-                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
-            .card.w-22
+                  li Kylling i rød karri
+                  li Kylling med chilipaste
+                p.price(data-text='kr 159,- per. pers.') kr 159,- per. pers.
+            .card
               .card-body
-                h6.card-subtitle.mb-2 Meny nr. 2 - 4 retter
+                h6.card-subtitle.mb-2 Meny nr. 2, 4 retter
                 ul
                   li Vårruller (2 stk. pr. pers)
-                  li Gul curry (kylling)
-                  li Sursøt saus (svin)
-                  li Chilipaste (kylling)
-                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
-            .card.w-22
+                  li Kylling i gul karri
+                  li Svin i sursøt saus
+                  li Kylling med chilipaste
+                p.price(data-text='kr 179,- per. pers.') kr 179,- per. pers.
+            .card
               .card-body
-                h6.card-subtitle.mb-2 Meny nr. 3 - 5 retter
+                h6.card-subtitle.mb-2 Meny nr. 3, 5 retter
                 ul
                   li Vårruller (2 stk. pr. pers)
-                  li Gul curry (kylling)
-                  li Thai wok (kylling/svin)
-                  li Sursøt saus (svin)
-                  li Chilipaste (kylling)
-                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
-            .card.w-22
+                  li Grønn karri (svin / kylling)
+                  li Thai wok (kylling / svin)
+                  li Svin i sursøt saus
+                  li Kylling med chilipaste
+                p.price(data-text='kr 195,- per. pers.') kr 195,- per. pers.
+            .card
               .card-body
-                h6.card-subtitle.mb-2 Meny nr. 4 - Supermeny
+                h6.card-subtitle.mb-2 Meny nr. 4, Supermeny
                 ul
                   li Vårruller (2 stk. pr. pers)
                   li Innbakt kylling
                   li Kyllingspidd
                   li Biffsnadder thai style (biffkjøtt)
-                  li Rød curry (kylling)
-                  li Sursøt saus (svin)
-                p.price(data-text='kr 200,- per. pers.') kr 200,- per. pers.
+                  li Kylling i rød karri
+                  li Svin i sursøt saus
+                p.price(data-text='kr 249,- per. pers.') kr 249,- per. pers.
           p
-            | Minimum 15 personer ved levering av mat. Alle rettene leveres barme med ris salat og saus.
-        .parallax-window(data-parallax='scroll', data-image-src='dist/images/statue.jpg', data-position-y='top')
-      section#meny
-        .container.reveal
-          h1.mt-5l Meny
-          .d-flex.flex-row.justify-content-between
-            .card.w-50
-              .card-body
-                for entry in menuEntries
-                  +menuentry(entry)
-        .parallax-window(data-parallax='scroll', data-image-src='dist/images/boats.jpg')
-      section#one
-        .container.reveal
-          h1.mt-5 Sticky footer with fixed navbar
-          p.lead
-            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
-            code padding-top: 60px;
-            |  on the 
-            code body > .container
-            | .
-          p
-            | Back to 
-            a(href='../sticky-footer') the default sticky footer
-            |  minus the navbar.
-      section#link
-        .container.reveal
-          h1.mt-5 Sticky footer with fixed navbar
-          p.lead
-            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
-            code padding-top: 60px;
-            |  on the 
-            code body > .container
-            | .
-          p
-            | Back to 
-            a(href='../sticky-footer') the default sticky footer
-            |  minus the navbar.
-        .parallax-window(data-parallax='scroll', data-image-src='dist/images/boats.jpg')
-      section#one
-        .container.reveal
-          h1.mt-5 Sticky footer with fixed navbar
-          p.lead
-            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
-            code padding-top: 60px;
-            |  on the 
-            code body > .container
-            | .
-          p
-            | Back to 
-            a(href='../sticky-footer') the default sticky footer
-            |  minus the navbar.
-      section#one
-        .container.reveal
-          h1.mt-5 Sticky footer with fixed navbar
-          p.lead
-            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
-            code padding-top: 60px;
-            |  on the 
-            code body > .container
-            | .
-          p
-            | Back to 
-            a(href='../sticky-footer') the default sticky footer
-            |  minus the navbar.
-      section#one
-        .container.reveal
-          h1.mt-5 Sticky footer with fixed navbar
-          p.lead
-            | Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with 
-            code padding-top: 60px;
-            |  on the 
-            code body > .container
-            | .
-          p
-            | Back to 
-            a(href='../sticky-footer') the default sticky footer
-            |  minus the navbar.
+            | Minimum 15 personer ved levering av mat. Alle rettene leveres varme med ris, salat og saus.
+        .parallax-window(data-parallax='scroll', data-image-src='dist/images/boats.jpg', data-position-y='top')
     footer.footer
       .container
         span.text-muted Place sticky footer content here.

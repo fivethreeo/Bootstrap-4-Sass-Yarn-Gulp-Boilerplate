@@ -64,8 +64,8 @@ $(function () {
 
 })(jQuery); // End of use strict
 
-var els = document.querySelectorAll('.reveal > *'), i;
+var els = document.querySelectorAll('.reveal p, .reveal h1, .reveal h2, .reveal h4, .reveal h5, .reveal h6, .reveal ul'), i;
 
 for (i = 0; i < els.length; ++i) {
-  sr.reveal(els[i], { reset: true, duration: 2000}, 50);;
+  sr.reveal(els[i], { reset: true, duration: 2000, mobile: false, distance: '20px',}, 50);;
 }

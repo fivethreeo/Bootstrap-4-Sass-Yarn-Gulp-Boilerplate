@@ -91,6 +91,7 @@ gulp.task('js', function() {
 });
 
 function handleError(err) {
+  console.log(err);
   this.emit('end');
 };
 
