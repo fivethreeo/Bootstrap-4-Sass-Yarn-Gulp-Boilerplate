@@ -2,5 +2,3 @@
 .sass-cache
 node_modules
 yarn.lock
-public/dist
-public/index.html
