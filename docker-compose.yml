@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  bootstrap:
+    build:
+      target: prod
+      context: .
+      dockerfile: Dockerfile
+    image: bootstrap:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.server.port=80"
+      - "traefik.server.frontend.rule=Host:${BOOTSTRAP_HOST:-localhost}"
+ 
