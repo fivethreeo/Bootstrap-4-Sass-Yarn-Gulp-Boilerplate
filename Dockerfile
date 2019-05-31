@@ -3,13 +3,16 @@ FROM node:8-alpine as base
 RUN mkdir /code
 WORKDIR /code
 
-COPY package.json package.json
-COPY yarn.lock yarn.lock
+COPY . /code/
 
 RUN apk add --no-cache --virtual .build-deps \
-    musl-dev \
+    build-base gcc linux-headers musl-dev \
+    libpng-dev libpng-utils \
+    jpeg-dev libjpeg-turbo-utils zlib-dev \
+    && yarn global add gulp \
     && yarn install \
     && cp yarn.lock yarn_run.lock \
+    && ln -sf /usr/bin/jpegtran /code/node_modules/imagemin-jpegtran/node_modules/jpegtran-bin/vendor/jpegtran \
     && cp -R node_modules node_modules_run \
     && yarn install --dev \
     && runDeps="$( \
@@ -19,8 +22,7 @@ RUN apk add --no-cache --virtual .build-deps \
                 | xargs -r apk info --installed \
                 | sort -u \
     )" \
-    && apk add --virtual .rundeps $runDeps \
-    && apk del .build-deps
+    && apk add --virtual .rundeps $runDeps
 
 # Uncomment after creating your docker-entrypoint.sh
 # ENTRYPOINT ["/code/docker-entrypoint.sh"]
@@ -38,7 +40,8 @@ RUN gulp \
     && rm -rf node_modules \
     && rm yarn.lock \
     && mv node_modules_run node_modules \
-    && mv yarn_run.lock yarn.lock
+    && mv yarn_run.lock yarn.lock \
+    && apk del .build-deps
 
 FROM nginx:stable-alpine as prod
 
