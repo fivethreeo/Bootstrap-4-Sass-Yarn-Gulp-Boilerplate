@@ -2,6 +2,7 @@ version: "3.7"
 
 services:
   bootstrap:
+    restart: always
     build:
       target: prod
       context: .
